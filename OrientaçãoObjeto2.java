@@ -1,20 +1,24 @@
 package com.mycompany.estrutura_escolha;
 
-import java.util.Scanner;
-public class NewClassPessoas {
-   
-    public static void main {String[] args)[]
-   
-    Pessoa objetoPessoa = new Pessoa();
-    Scanner leitor = new Scanner(System.in);
+public class Pessoa {
+    private float peso;
+    private float altura;
 
-    System.out.println("Digite o peso da pessoa");   
-        objetoPessoa.setpeso(leitor.nextFloat());
+    // Método para definir o peso
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
 
-System.out.println("Digite a altura da pessoa");   
-        objetoPessoa.setAltura(leitor.nextFloat(());
-        
-        System.out.println("IMC = " + objetoPessoaIMC");   
-      
+    // Método para definir a altura
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
+
+    // Método para calcular o IMC
+    public float calcularIMC() {
+        if (altura > 0) {
+            return peso / (altura * altura);
+        }
+        return 0; // Retorna 0 em caso de altura inválida (0)
     }
 }
