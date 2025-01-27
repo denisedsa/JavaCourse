@@ -1,21 +1,31 @@
 package Encapsulamento;
 
-public class Encapsulamento {
-    
-    //Metodos construtor
-    
-    Pessoa objetoPessoa = new Pessoa()
-    Scanner leitor = new Scanner(System.in);
+public class Pessoa {
+    private float peso;
+    private float altura;
 
-    System.out.println("Digite o peso da pessoa");   
-    objetoPessoa.setPeso (Leitor.nextFloat();
-    System.out.println("Digite a altura da pessoa");   
-    objetoPessoa.setAltura (Leitor.nextFloat();    
-    
-    System.out.println("IMC = " + objetoPessoa.calcularIMC());
-
-
+    // Métodos getters e setters
+    public float getPeso() {
+        return peso;
     }
 
-}
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
 
+    public float getAltura() {
+        return altura;
+    }
+
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
+
+    // Método para calcular o IMC
+    public float calcularIMC() {
+        if (altura > 0) {
+            return peso / (altura * altura);
+        }
+        return 0; // Evitar divisão por zero
+    }
+}
