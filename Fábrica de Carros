@@ -1,31 +1,28 @@
 import java.util.Scanner;
 
-  public class VeiculoNovo {
+public class VeiculoNovo {
 
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
 
-      Scanner scan = new Scanner(System.in);
+        // Entrada do custo de fábrica, porcentagem do distribuidor e percentual de impostos
+        System.out.print("Digite o custo de fábrica: ");
+        int custoFabrica = scan.nextInt();
 
-      int custoFabrica = scan.nextInt();
+        System.out.print("Digite a porcentagem do distribuidor: ");
+        int porcentagemDistribuidor = scan.nextInt();
 
-      int porcentagemDistribuidor = scan.nextInt();
+        System.out.print("Digite o percentual de impostos: ");
+        int percentualImpostos = scan.nextInt();
 
-      int percentualImpostos = scan.nextInt();
+        // Cálculos
+        int distribuidor = (custoFabrica * porcentagemDistribuidor) / 100;
+        int valorImpostos = (custoFabrica * percentualImpostos) / 100;
+        int valorCarro = custoFabrica + distribuidor + valorImpostos;
 
-      int custoConsumidor;
+        // Exibição do valor final do carro
+        System.out.println("Valor final do carro: " + valorCarro);
 
-      int distribuidor;
-
-      int valorImpostos;
-
-       distribuidor = (custoFabrica * porcentagemDistribuidor) / 100;
-
-       valorImpostos = (custoFabrica * percentualImpostos) / 100;
-
-       int valorCarro = custoFabrica+distribuidor+valorImpostos;
-
-       System.out.println(valorCarro);
-
-   }
-
+        scan.close(); // Fechar o scanner para evitar vazamento de recursos
+    }
 }
